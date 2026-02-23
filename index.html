@@ -7,6 +7,7 @@
     <title>Scientific Calculator</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
@@ -14,11 +15,11 @@
 <div class="top-bar">
     <button onclick="toggleTheme()">🌙 Theme</button>
     <button onclick="toggleMode()">DEG/RAD</button>
+    <button onclick="copyResult()">📋 Copy</button>
 </div>
 
 <div class="container">
 
-    <!-- Calculator -->
     <div class="calculator">
         <input type="text" id="display">
 
@@ -61,7 +62,6 @@
         </div>
     </div>
 
-    <!-- History -->
     <div class="history">
         <h3>History</h3>
         <ul id="historyList"></ul>

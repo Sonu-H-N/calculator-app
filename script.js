@@ -3,13 +3,26 @@ let historyList = document.getElementById("historyList");
 
 let isDegree = true;
 
+/* Sound */
+let clickSound = new Audio("click.mp3");
+
+/* Load History */
+window.onload = () => {
+    let saved = localStorage.getItem("calcHistory");
+    if (saved) {
+        historyList.innerHTML = saved;
+    }
+};
+
 /* Basic */
 
 function appendValue(val) {
+    playSound();
     display.value += val;
 }
 
 function appendFunction(func) {
+    playSound();
     display.value += func;
 }
 
@@ -58,13 +71,23 @@ function addToHistory(item) {
     let li = document.createElement("li");
     li.textContent = item;
     historyList.prepend(li);
+
+    localStorage.setItem("calcHistory", historyList.innerHTML);
 }
 
 function clearHistory() {
     historyList.innerHTML = "";
+    localStorage.removeItem("calcHistory");
 }
 
-/* Keyboard Support */
+/* Copy */
+
+function copyResult() {
+    navigator.clipboard.writeText(display.value);
+    alert("Copied!");
+}
+
+/* Keyboard */
 
 document.addEventListener("keydown", (e) => {
 
@@ -88,4 +111,17 @@ function toggleTheme() {
 function toggleMode() {
     isDegree = !isDegree;
     alert(isDegree ? "Degree Mode" : "Radian Mode");
+}
+
+/* Sound */
+
+function playSound() {
+    clickSound.currentTime = 0;
+    clickSound.play();
+}
+
+/* PWA Service Worker */
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
 }
