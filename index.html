@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator App</title>
+    <title>Scientific Calculator</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,6 +17,19 @@
         <input type="text" id="display" disabled>
 
         <div class="buttons">
+
+            <!-- Scientific -->
+            <button onclick="appendFunction('Math.sin(')">sin</button>
+            <button onclick="appendFunction('Math.cos(')">cos</button>
+            <button onclick="appendFunction('Math.tan(')">tan</button>
+            <button onclick="appendValue('Math.PI')">π</button>
+
+            <button onclick="appendFunction('Math.log10(')">log</button>
+            <button onclick="appendFunction('Math.log(')">ln</button>
+            <button onclick="appendFunction('Math.sqrt(')">√</button>
+            <button onclick="appendValue('**2')">x²</button>
+
+            <!-- Normal -->
             <button onclick="clearDisplay()">C</button>
             <button onclick="deleteLast()">⌫</button>
             <button onclick="appendValue('%')">%</button>
@@ -40,6 +53,7 @@
             <button onclick="appendValue('0')" class="zero">0</button>
             <button onclick="appendValue('.')">.</button>
             <button onclick="calculate()">=</button>
+
         </div>
     </div>
 

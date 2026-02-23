@@ -5,6 +5,10 @@ function appendValue(value) {
     display.value += value;
 }
 
+function appendFunction(func) {
+    display.value += func;
+}
+
 function clearDisplay() {
     display.value = "";
 }

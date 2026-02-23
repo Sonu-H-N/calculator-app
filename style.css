@@ -44,19 +44,10 @@ body {
     gap: 10px;
 }
 
-button {
-    height: 60px;
-    font-size: 18px;
-    border: none;
-    border-radius: 10px;
-    background: #334155;
-    color: white;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-button:hover {
-    background: #475569;
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 70px);
+    gap: 10px;
 }
 
 .zero {
