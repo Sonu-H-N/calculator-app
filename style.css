@@ -5,7 +5,15 @@ body {
     align-items: center;
     height: 100vh;
     font-family: Arial, sans-serif;
+    color: white;
 }
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+/* Calculator */
 
 .calculator {
     background: #1e293b;
@@ -23,6 +31,11 @@ body {
     border: none;
     border-radius: 10px;
     text-align: right;
+
+    /* Mild clear color */
+    background: #e2e8f0;
+    color: #0f172a;
+    font-weight: bold;
 }
 
 .buttons {
@@ -48,4 +61,42 @@ button:hover {
 
 .zero {
     grid-column: span 2;
+}
+
+/* History Panel */
+
+.history {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 15px;
+    width: 200px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.history h3 {
+    margin-bottom: 10px;
+}
+
+#historyList {
+    list-style: none;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 0;
+}
+
+#historyList li {
+    padding: 5px;
+    border-bottom: 1px solid #334155;
+    font-size: 14px;
+}
+
+.clear-history {
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    background: #ef4444;
+}
+
+.clear-history:hover {
+    background: #dc2626;
 }

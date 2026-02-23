@@ -1,4 +1,5 @@
 let display = document.getElementById("display");
+let historyList = document.getElementById("historyList");
 
 function appendValue(value) {
     display.value += value;
@@ -14,8 +15,23 @@ function deleteLast() {
 
 function calculate() {
     try {
-        display.value = eval(display.value);
+        let expression = display.value;
+        let result = eval(expression);
+
+        addToHistory(expression + " = " + result);
+
+        display.value = result;
     } catch {
         display.value = "Error";
     }
+}
+
+function addToHistory(item) {
+    let li = document.createElement("li");
+    li.textContent = item;
+    historyList.prepend(li);
+}
+
+function clearHistory() {
+    historyList.innerHTML = "";
 }

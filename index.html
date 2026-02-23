@@ -10,6 +10,9 @@
 
 <body>
 
+<div class="container">
+
+    <!-- Calculator -->
     <div class="calculator">
         <input type="text" id="display" disabled>
 
@@ -40,7 +43,15 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- History -->
+    <div class="history">
+        <h3>History</h3>
+        <ul id="historyList"></ul>
+        <button class="clear-history" onclick="clearHistory()">Clear</button>
+    </div>
 
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
