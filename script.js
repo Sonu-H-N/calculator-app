@@ -125,3 +125,58 @@ function playSound() {
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js');
 }
+function startVoice() {
+
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+    recognition.onresult = function(event) {
+        let speech = event.results[0][0].transcript;
+
+        speech = speech
+            .replace(/plus/gi, "+")
+            .replace(/minus/gi, "-")
+            .replace(/into|multiply/gi, "*")
+            .replace(/divide/gi, "/");
+
+        display.value = speech;
+        calculate();
+    };
+
+    recognition.start();
+}
+function solveAI() {
+
+    try {
+        let exp = display.value;
+
+        let result = eval(exp);
+
+        alert("Step:\n" + exp + "\n\nResult: " + result);
+
+    } catch {
+        alert("Invalid expression");
+    }
+}
+function plotGraph() {
+
+    let ctx = document.getElementById('graph');
+
+    let dataX = [];
+    let dataY = [];
+
+    for (let x = -10; x <= 10; x++) {
+        dataX.push(x);
+        dataY.push(eval(display.value.replace(/x/g, x)));
+    }
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: dataX,
+            datasets: [{
+                label: 'Graph',
+                data: dataY
+            }]
+        }
+    });
+}
