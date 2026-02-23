@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,18 +11,22 @@
 
 <body>
 
+<div class="top-bar">
+    <button onclick="toggleTheme()">🌙 Theme</button>
+    <button onclick="toggleMode()">DEG/RAD</button>
+</div>
+
 <div class="container">
 
     <!-- Calculator -->
     <div class="calculator">
-        <input type="text" id="display" disabled>
+        <input type="text" id="display">
 
         <div class="buttons">
 
-            <!-- Scientific -->
-            <button onclick="appendFunction('Math.sin(')">sin</button>
-            <button onclick="appendFunction('Math.cos(')">cos</button>
-            <button onclick="appendFunction('Math.tan(')">tan</button>
+            <button onclick="applyTrig('sin')">sin</button>
+            <button onclick="applyTrig('cos')">cos</button>
+            <button onclick="applyTrig('tan')">tan</button>
             <button onclick="appendValue('Math.PI')">π</button>
 
             <button onclick="appendFunction('Math.log10(')">log</button>
@@ -29,7 +34,6 @@
             <button onclick="appendFunction('Math.sqrt(')">√</button>
             <button onclick="appendValue('**2')">x²</button>
 
-            <!-- Normal -->
             <button onclick="clearDisplay()">C</button>
             <button onclick="deleteLast()">⌫</button>
             <button onclick="appendValue('%')">%</button>
@@ -61,7 +65,7 @@
     <div class="history">
         <h3>History</h3>
         <ul id="historyList"></ul>
-        <button class="clear-history" onclick="clearHistory()">Clear</button>
+        <button onclick="clearHistory()">Clear</button>
     </div>
 
 </div>
