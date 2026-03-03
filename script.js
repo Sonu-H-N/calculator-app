@@ -180,3 +180,16 @@ function plotGraph() {
         }
     });
 }
+async function convertCurrency() {
+
+    let amount = parseFloat(display.value);
+
+    if (isNaN(amount)) return alert("Enter amount");
+
+    let res = await fetch("https://api.exchangerate-api.com/v4/latest/USD");
+    let data = await res.json();
+
+    let inr = amount * data.rates.INR;
+
+    alert(amount + " USD = " + inr.toFixed(2) + " INR");
+}

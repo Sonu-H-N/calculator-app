@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scientific Calculator</title>
+    <title>Advanced Scientific Calculator</title>
 
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
@@ -12,68 +12,92 @@
 
 <body>
 
-<div class="top-bar">
-    <button onclick="toggleTheme()">🌙 Theme</button>
-    <button onclick="toggleMode()">DEG/RAD</button>
-    <button onclick="copyResult()">📋 Copy</button>
-</div>
+<header class="app-header">
+    <h1>Advanced Scientific Calculator</h1>
 
-<div class="container">
+    <div class="top-bar">
+        <button onclick="toggleTheme()">🌙 Theme</button>
+        <button onclick="toggleMode()">DEG / RAD</button>
+        <button onclick="copyResult()">📋 Copy</button>
+        <button onclick="startVoice()">🎤 Voice</button>
+    </div>
+</header>
 
-    <div class="calculator">
-        <input type="text" id="display">
+<main class="container">
 
-        <div class="buttons">
-            <button onclick="startVoice()">🎤 Voice</button>
-            <button onclick="solveAI()">🧠 Solve</button>
-            <button onclick="plotGraph()">📈 Graph</button>
-            <canvas id="graph" width="300" height="200"></canvas>
-            <button onclick="applyTrig('sin')">sin</button>
-            <button onclick="applyTrig('cos')">cos</button>
-            <button onclick="applyTrig('tan')">tan</button>
-            <button onclick="appendValue('Math.PI')">π</button>
+    <!-- Calculator Section -->
+    <section class="calculator-section">
 
-            <button onclick="appendFunction('Math.log10(')">log</button>
-            <button onclick="appendFunction('Math.log(')">ln</button>
-            <button onclick="appendFunction('Math.sqrt(')">√</button>
-            <button onclick="appendValue('**2')">x²</button>
+        <div class="calculator">
+            <input type="text" id="display" placeholder="Enter expression...">
 
-            <button onclick="clearDisplay()">C</button>
-            <button onclick="deleteLast()">⌫</button>
-            <button onclick="appendValue('%')">%</button>
-            <button onclick="appendValue('/')">÷</button>
+            <!-- Scientific Functions -->
+            <div class="buttons scientific">
+                <button onclick="applyTrig('sin')">sin</button>
+                <button onclick="applyTrig('cos')">cos</button>
+                <button onclick="applyTrig('tan')">tan</button>
+                <button onclick="appendValue('Math.PI')">π</button>
 
-            <button onclick="appendValue('7')">7</button>
-            <button onclick="appendValue('8')">8</button>
-            <button onclick="appendValue('9')">9</button>
-            <button onclick="appendValue('*')">×</button>
+                <button onclick="appendFunction('Math.log10(')">log</button>
+                <button onclick="appendFunction('Math.log(')">ln</button>
+                <button onclick="appendFunction('Math.sqrt(')">√</button>
+                <button onclick="appendValue('**2')">x²</button>
+            </div>
 
-            <button onclick="appendValue('4')">4</button>
-            <button onclick="appendValue('5')">5</button>
-            <button onclick="appendValue('6')">6</button>
-            <button onclick="appendValue('-')">−</button>
+            <!-- Standard Buttons -->
+            <div class="buttons standard">
+                <button onclick="clearDisplay()">C</button>
+                <button onclick="deleteLast()">⌫</button>
+                <button onclick="appendValue('%')">%</button>
+                <button onclick="appendValue('/')">÷</button>
 
-            <button onclick="appendValue('1')">1</button>
-            <button onclick="appendValue('2')">2</button>
-            <button onclick="appendValue('3')">3</button>
-            <button onclick="appendValue('+')">+</button>
+                <button onclick="appendValue('7')">7</button>
+                <button onclick="appendValue('8')">8</button>
+                <button onclick="appendValue('9')">9</button>
+                <button onclick="appendValue('*')">×</button>
 
-            <button onclick="appendValue('0')" class="zero">0</button>
-            <button onclick="appendValue('.')">.</button>
-            <button onclick="calculate()">=</button>
+                <button onclick="appendValue('4')">4</button>
+                <button onclick="appendValue('5')">5</button>
+                <button onclick="appendValue('6')">6</button>
+                <button onclick="appendValue('-')">−</button>
+
+                <button onclick="appendValue('1')">1</button>
+                <button onclick="appendValue('2')">2</button>
+                <button onclick="appendValue('3')">3</button>
+                <button onclick="appendValue('+')">+</button>
+
+                <button onclick="appendValue('0')" class="zero">0</button>
+                <button onclick="appendValue('.')">.</button>
+                <button class="equals" onclick="calculate()">=</button>
+            </div>
 
         </div>
-    </div>
 
-    <div class="history">
-        <h3>History</h3>
+        <!-- Extra Tools -->
+        <div class="tools">
+            <button onclick="solveAI()">🧠 Solve</button>
+            <button onclick="plotGraph()">📈 Plot Graph</button>
+            <button onclick="convertCurrency()">💱 Convert</button>
+        </div>
+
+        <!-- Graph Area -->
+        <div class="graph-section">
+            <canvas id="graph"></canvas>
+        </div>
+
+    </section>
+
+    <!-- History Section -->
+    <aside class="history">
+        <h3>Calculation History</h3>
         <ul id="historyList"></ul>
-        <button onclick="clearHistory()">Clear</button>
-    </div>
+        <button class="clear-history" onclick="clearHistory()">Clear History</button>
+    </aside>
 
-</div>
+</main>
 
 <script src="script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </body>
 </html>
