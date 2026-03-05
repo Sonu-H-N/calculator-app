@@ -3,6 +3,7 @@
    Professional Structured Version
 ================================== */
 let memory = 0;
+let preview = document.getElementById("preview");
 document.addEventListener("DOMContentLoaded", () => {
 
     const display = document.getElementById("display");
@@ -282,4 +283,14 @@ function downloadHistory() {
     a.download = "calculator-history.txt";
 
     a.click();
+}
+function appendValue(val) {
+    playSound();
+    display.value += val;
+
+    try {
+        preview.textContent = eval(display.value);
+    } catch {
+        preview.textContent = "";
+    }
 }

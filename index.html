@@ -29,13 +29,14 @@
     <section class="calculator-section">
 
         <div class="calculator">
-            <input type="text" id="display" placeholder="Enter expression...">
-             <div class="buttons memory">
-    <button onclick="memoryAdd()">M+</button>
-    <button onclick="memorySubtract()">M-</button>
-    <button onclick="memoryRecall()">MR</button>
-    <button onclick="memoryClear()">MC</button>
-</div>
+            <div class="display-container">
+    <div id="preview"></div>
+    <input type="text" id="display" placeholder="0">
+</div>>
+            <button class="operator" onclick="appendValue('+')">+</button>
+<button class="operator" onclick="appendValue('-')">−</button>
+<button class="operator" onclick="appendValue('*')">×</button>
+<button class="operator" onclick="appendValue('/')">÷</button>
             <!-- Scientific Functions -->
             <div class="buttons scientific">
                 <button onclick="applyTrig('sin')">sin</button>

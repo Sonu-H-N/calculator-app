@@ -269,3 +269,31 @@ button:active {
         transform: translateY(0);
     }
 }
+.operator {
+    background: #3b82f6;
+}
+
+.operator:hover {
+    background: #2563eb;
+}
+
+.equals {
+    background: #22c55e;
+}
+
+.equals:hover {
+    background: #16a34a;
+}
+.display-container {
+    margin-bottom: 15px;
+}
+
+#preview {
+    font-size: 14px;
+    opacity: 0.6;
+    text-align: right;
+    padding-right: 10px;
+}
+button:hover {
+    box-shadow: 0 0 10px rgba(59,130,246,0.6);
+}
