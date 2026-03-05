@@ -30,7 +30,12 @@
 
         <div class="calculator">
             <input type="text" id="display" placeholder="Enter expression...">
-
+             <div class="buttons memory">
+    <button onclick="memoryAdd()">M+</button>
+    <button onclick="memorySubtract()">M-</button>
+    <button onclick="memoryRecall()">MR</button>
+    <button onclick="memoryClear()">MC</button>
+</div>
             <!-- Scientific Functions -->
             <div class="buttons scientific">
                 <button onclick="applyTrig('sin')">sin</button>
@@ -93,6 +98,7 @@
         <ul id="historyList"></ul>
         <button class="clear-history" onclick="clearHistory()">Clear History</button>
     </aside>
+    <button onclick="downloadHistory()">📥 Download History</button>
 
 </main>
 

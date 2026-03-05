@@ -2,7 +2,7 @@
    Advanced Scientific Calculator
    Professional Structured Version
 ================================== */
-
+let memory = 0;
 document.addEventListener("DOMContentLoaded", () => {
 
     const display = document.getElementById("display");
@@ -66,8 +66,20 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        addToHistory(`${display.value} = ${result}`);
+        function addToHistory(item) {
+
+    let li = document.createElement("li");
+    li.textContent = item;
+
+    li.onclick = () => {
+        let result = item.split("=")[1].trim();
         display.value = result;
+    };
+
+    historyList.prepend(li);
+
+    localStorage.setItem("calcHistory", historyList.innerHTML);
+}
     };
 
     /* ===============================
@@ -237,3 +249,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loadHistory();
 });
+function memoryAdd() {
+    let value = parseFloat(display.value);
+    if (!isNaN(value)) {
+        memory += value;
+    }
+}
+
+function memorySubtract() {
+    let value = parseFloat(display.value);
+    if (!isNaN(value)) {
+        memory -= value;
+    }
+}
+
+function memoryRecall() {
+    display.value = memory;
+}
+
+function memoryClear() {
+    memory = 0;
+}
+function downloadHistory() {
+
+    let history = historyList.innerText;
+
+    let blob = new Blob([history], { type: "text/plain" });
+
+    let a = document.createElement("a");
+
+    a.href = URL.createObjectURL(blob);
+    a.download = "calculator-history.txt";
+
+    a.click();
+}
