@@ -1,110 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Scientific Calculator</title>
-
+    <title>CALC — Advanced Scientific Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
 </head>
+<body class="dark">
 
-<body>
+<div class="noise"></div>
 
 <header class="app-header">
-    <h1>Advanced Scientific Calculator</h1>
-
+    <div class="logo-row">
+        <span class="logo-mark">⬡</span>
+        <h1>CALC<span class="logo-dot">.</span></h1>
+        <span class="version-tag">Scientific v2.0</span>
+    </div>
     <div class="top-bar">
-        <button onclick="toggleTheme()">🌙 Theme</button>
-        <button onclick="toggleMode()">DEG / RAD</button>
-        <button onclick="copyResult()">📋 Copy</button>
-        <button onclick="startVoice()">🎤 Voice</button>
+        <button class="ctrl-btn" onclick="toggleTheme()" id="themeBtn">
+            <span class="btn-icon">◑</span> Theme
+        </button>
+        <button class="ctrl-btn" onclick="toggleMode()" id="modeBtn">
+            <span class="btn-icon">◎</span> <span id="modeLabel">DEG</span>
+        </button>
+        <button class="ctrl-btn" onclick="copyResult()">
+            <span class="btn-icon">⊕</span> Copy
+        </button>
+        <button class="ctrl-btn" onclick="startVoice()">
+            <span class="btn-icon">◉</span> Voice
+        </button>
     </div>
 </header>
 
 <main class="container">
 
-    <!-- Calculator Section -->
     <section class="calculator-section">
 
         <div class="calculator">
-            <div class="display-container">
-    <div id="preview"></div>
-    <input type="text" id="display" placeholder="0">
-</div>>
-            <button class="operator" onclick="appendValue('+')">+</button>
-<button class="operator" onclick="appendValue('-')">−</button>
-<button class="operator" onclick="appendValue('*')">×</button>
-<button class="operator" onclick="appendValue('/')">÷</button>
-            <!-- Scientific Functions -->
-            <div class="buttons scientific">
-                <button onclick="applyTrig('sin')">sin</button>
-                <button onclick="applyTrig('cos')">cos</button>
-                <button onclick="applyTrig('tan')">tan</button>
-                <button onclick="appendValue('Math.PI')">π</button>
 
-                <button onclick="appendFunction('Math.log10(')">log</button>
-                <button onclick="appendFunction('Math.log(')">ln</button>
-                <button onclick="appendFunction('Math.sqrt(')">√</button>
-                <button onclick="appendValue('**2')">x²</button>
+            <!-- Display -->
+            <div class="display-container">
+                <div class="display-label">EXPRESSION</div>
+                <div id="preview" class="preview-line">—</div>
+                <input type="text" id="display" placeholder="0" autocomplete="off" spellcheck="false">
+                <div class="display-footer">
+                    <span id="angleMode">DEG</span>
+                    <span id="memIndicator" class="hidden">MEM</span>
+                </div>
+            </div>
+
+            <!-- Memory Row -->
+            <div class="memory-row">
+                <button class="mem-btn" onclick="memoryAdd()">M+</button>
+                <button class="mem-btn" onclick="memorySubtract()">M−</button>
+                <button class="mem-btn" onclick="memoryRecall()">MR</button>
+                <button class="mem-btn danger" onclick="memoryClear()">MC</button>
+            </div>
+
+            <!-- Scientific Functions -->
+            <div class="section-label">SCIENTIFIC</div>
+            <div class="buttons scientific">
+                <button class="sci-btn" onclick="applyTrig('sin')">sin</button>
+                <button class="sci-btn" onclick="applyTrig('cos')">cos</button>
+                <button class="sci-btn" onclick="applyTrig('tan')">tan</button>
+                <button class="sci-btn" onclick="appendValue('Math.PI')">π</button>
+                <button class="sci-btn" onclick="appendFunction('Math.log10(')">log</button>
+                <button class="sci-btn" onclick="appendFunction('Math.log(')">ln</button>
+                <button class="sci-btn" onclick="appendFunction('Math.sqrt(')">√</button>
+                <button class="sci-btn" onclick="appendValue('**2')">x²</button>
             </div>
 
             <!-- Standard Buttons -->
+            <div class="section-label">STANDARD</div>
             <div class="buttons standard">
-                <button onclick="clearDisplay()">C</button>
-                <button onclick="deleteLast()">⌫</button>
-                <button onclick="appendValue('%')">%</button>
-                <button onclick="appendValue('/')">÷</button>
+                <button class="action-btn danger" onclick="clearDisplay()">C</button>
+                <button class="action-btn" onclick="deleteLast()">⌫</button>
+                <button class="action-btn" onclick="appendValue('%')">%</button>
+                <button class="op-btn" onclick="appendValue('/')">÷</button>
 
-                <button onclick="appendValue('7')">7</button>
-                <button onclick="appendValue('8')">8</button>
-                <button onclick="appendValue('9')">9</button>
-                <button onclick="appendValue('*')">×</button>
+                <button class="num-btn" onclick="appendValue('7')">7</button>
+                <button class="num-btn" onclick="appendValue('8')">8</button>
+                <button class="num-btn" onclick="appendValue('9')">9</button>
+                <button class="op-btn" onclick="appendValue('*')">×</button>
 
-                <button onclick="appendValue('4')">4</button>
-                <button onclick="appendValue('5')">5</button>
-                <button onclick="appendValue('6')">6</button>
-                <button onclick="appendValue('-')">−</button>
+                <button class="num-btn" onclick="appendValue('4')">4</button>
+                <button class="num-btn" onclick="appendValue('5')">5</button>
+                <button class="num-btn" onclick="appendValue('6')">6</button>
+                <button class="op-btn" onclick="appendValue('-')">−</button>
 
-                <button onclick="appendValue('1')">1</button>
-                <button onclick="appendValue('2')">2</button>
-                <button onclick="appendValue('3')">3</button>
-                <button onclick="appendValue('+')">+</button>
+                <button class="num-btn" onclick="appendValue('1')">1</button>
+                <button class="num-btn" onclick="appendValue('2')">2</button>
+                <button class="num-btn" onclick="appendValue('3')">3</button>
+                <button class="op-btn" onclick="appendValue('+')">+</button>
 
-                <button onclick="appendValue('0')" class="zero">0</button>
-                <button onclick="appendValue('.')">.</button>
-                <button class="equals" onclick="calculate()">=</button>
+                <button class="num-btn zero" onclick="appendValue('0')">0</button>
+                <button class="num-btn" onclick="appendValue('.')">.</button>
+                <button class="eq-btn" onclick="calculate()">=</button>
             </div>
 
         </div>
 
-        <!-- Extra Tools -->
+        <!-- Tools -->
         <div class="tools">
-            <button onclick="solveAI()">🧠 Solve</button>
-            <button onclick="plotGraph()">📈 Plot Graph</button>
-            <button onclick="convertCurrency()">💱 Convert</button>
+            <button class="tool-btn" onclick="solveAI()">
+                <span class="tool-icon">⬡</span>
+                <span>AI Solve</span>
+            </button>
+            <button class="tool-btn" onclick="plotGraph()">
+                <span class="tool-icon">◈</span>
+                <span>Plot Graph</span>
+            </button>
+            <button class="tool-btn" onclick="convertCurrency()">
+                <span class="tool-icon">◇</span>
+                <span>Convert $</span>
+            </button>
+            <button class="tool-btn" onclick="downloadHistory()">
+                <span class="tool-icon">↓</span>
+                <span>Export</span>
+            </button>
         </div>
 
-        <!-- Graph Area -->
-        <div class="graph-section">
+        <!-- Graph -->
+        <div class="graph-section" id="graphSection" style="display:none;">
+            <div class="section-label">GRAPH OUTPUT</div>
             <canvas id="graph"></canvas>
         </div>
 
     </section>
 
-    <!-- History Section -->
+    <!-- History -->
     <aside class="history">
-        <h3>Calculation History</h3>
+        <div class="history-header">
+            <span class="section-label">HISTORY</span>
+            <button class="clear-history" onclick="clearHistory()">CLEAR</button>
+        </div>
         <ul id="historyList"></ul>
-        <button class="clear-history" onclick="clearHistory()">Clear History</button>
+        <div class="history-empty" id="emptyMsg">No calculations yet</div>
     </aside>
-    <button onclick="downloadHistory()">📥 Download History</button>
 
 </main>
 
-<script src="script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="toast" id="toast"></div>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
