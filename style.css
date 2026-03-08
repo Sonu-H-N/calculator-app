@@ -191,12 +191,12 @@ h1 {
 
 /* ---- Calculator Card ---- */
 .calculator {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 24px;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow);
-    animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(12px);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+    width: 320px;
 }
 
 @keyframes slideUp {
@@ -586,11 +586,37 @@ h1 {
         max-width: 400px;
     }
 
-    .history { order: 2; }
+    .history {
+    background: rgba(30,41,59,0.7);
+    backdrop-filter: blur(12px);
+    padding: 20px;
+    border-radius: 20px;
+    width: 260px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.3);
+}
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    min-height: 100vh;
+}
+button:hover {
+    background: #475569;
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(59,130,246,0.6);
+}
+.calculator {
+    animation: floatIn 0.6s ease;
+}
 
-    .tools {
-        grid-template-columns: repeat(2, 1fr);
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-
-    h1 { font-size: 1.5rem; }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
