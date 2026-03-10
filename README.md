@@ -1,0 +1,42 @@
+# 🧮 Advanced Scientific Calculator Web App
+
+A modern **Advanced Scientific Calculator** built using **HTML, CSS, and JavaScript**.  
+This project includes scientific operations, graph plotting, voice input, and many professional features.
+
+## 🚀 Live Demo
+https://sonu-h-n.github.io/calculator-app/
+
+---
+
+## ✨ Features
+
+- 🔢 Basic arithmetic operations
+- 📐 Scientific functions (sin, cos, tan, log, ln, √, π, x²)
+- 🎤 Voice input calculator
+- 📊 Graph plotting using Chart.js
+- 💱 Currency converter (USD → INR)
+- 🌙 Dark / Light theme toggle
+- ⌨️ Keyboard typing support
+- 🧠 AI solve helper
+- 🕘 Calculation history (saved using localStorage)
+- 📥 Download calculation history
+- 📋 Copy result button
+- 🧮 Memory functions (M+, M-, MR, MC)
+- 📱 Mobile responsive layout
+- 📦 Installable as PWA (Progressive Web App)
+
+---
+
+## 🛠️ Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript
+- Chart.js
+- Web Speech API
+- LocalStorage
+- Service Worker (PWA)
+
+---
+
+## 📂 Project Structure
