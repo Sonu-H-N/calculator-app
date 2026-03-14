@@ -40,3 +40,14 @@ https://sonu-h-n.github.io/calculator-app/
 ---
 
 ## 📂 Project Structure
+
+calculator-app
+│
+├── index.html
+├── style.css
+├── script.js
+├── manifest.json
+├── service-worker.js
+├── icon.png
+├── click.mp3
+└── README.md
