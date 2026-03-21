@@ -6,8 +6,6 @@ This project includes scientific operations, graph plotting, voice input, and ma
 ## 🚀 Live Demo
 https://sonu-h-n.github.io/calculator-app/
 
----
-
 ## ✨ Features
 
 - 🔢 Basic arithmetic operations
@@ -25,8 +23,6 @@ https://sonu-h-n.github.io/calculator-app/
 - 📱 Mobile responsive layout
 - 📦 Installable as PWA (Progressive Web App)
 
----
-
 ## 🛠️ Technologies Used
 
 - HTML5
@@ -36,8 +32,6 @@ https://sonu-h-n.github.io/calculator-app/
 - Web Speech API
 - LocalStorage
 - Service Worker (PWA)
-
----
 
 ## 📂 Project Structure
 
@@ -52,21 +46,12 @@ calculator-app
 ├── click.mp3
 └── README.md
 
-
----
-
 ## ⚙️ How to Run Locally
 1. Clone the repository
 git clone https://github.com/Sonu-H-N/calculator-app.git
 
-
 2. Open the project folder
 cd calculator-app
 
-
 3. Open `index.html` in your browser  
 OR run using **Live Server** in VS Code.
-
-
-
-
