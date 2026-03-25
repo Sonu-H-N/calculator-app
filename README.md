@@ -62,3 +62,12 @@ OR run using **Live Server** in VS Code.
 - Unit converter
 - Better graph customization
 - Save history to cloud
+
+## 👨‍💻 Author
+
+**Sonu H N**
+
+GitHub:  
+https://github.com/Sonu-H-N
+
+⭐ If you like this project, consider giving it a **star** on GitHub!
