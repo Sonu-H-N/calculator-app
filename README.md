@@ -55,3 +55,10 @@ cd calculator-app
 
 3. Open `index.html` in your browser  
 OR run using **Live Server** in VS Code.
+
+## 📌 Future Improvements
+
+- More advanced scientific functions
+- Unit converter
+- Better graph customization
+- Save history to cloud
