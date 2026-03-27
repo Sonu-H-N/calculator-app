@@ -621,6 +621,17 @@ button:active {
     max-width: 900px;
     margin: auto;
 }
+@media (max-width: 600px) {
+
+.container {
+    grid-template-columns: 1fr;
+}
+
+.buttons {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+}
 
 }
 body {
