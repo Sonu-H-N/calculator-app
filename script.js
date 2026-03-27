@@ -392,3 +392,47 @@ document.addEventListener("DOMContentLoaded", () => {
     /* Init */
     loadHistory();
 });
+function showSteps(expression) {
+
+    let stepsList = document.getElementById("stepsList");
+    stepsList.innerHTML = "";
+
+    try {
+        let exp = expression;
+
+        // Step 1: Multiplication & Division
+        let step1 = exp.replace(/(\d+)([*\/])(\d+)/, (match, a, op, b) => {
+            let result = eval(match);
+            addStep(`Step 1: ${match} = ${result}`);
+            return result;
+        });
+
+        // Step 2: Addition/Subtraction
+        let result = eval(step1);
+        addStep(`Step 2: ${step1} = ${result}`);
+
+    } catch {
+        addStep("Unable to show steps");
+    }
+}
+
+function addStep(text) {
+    let li = document.createElement("li");
+    li.textContent = text;
+    document.getElementById("stepsList").appendChild(li);
+}
+function calculate() {
+
+    try {
+        let expression = display.value;
+        let result = eval(expression);
+
+        showSteps(expression);
+
+        addToHistory(expression + " = " + result);
+        display.value = result;
+
+    } catch {
+        display.value = "Error";
+    }
+}

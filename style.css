@@ -673,7 +673,7 @@ button:hover {
         transform: translateY(0);
     }
 }
-}
+
 .operator {
     background: #2563eb;
 }
@@ -699,3 +699,20 @@ button:hover {
     width: 100%;
     max-width: 380px;
     margin: auto;
+
+    .steps-panel {
+    background: rgba(30,41,59,0.8);
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+#stepsList {
+    list-style: none;
+    padding: 0;
+    font-size: 14px;
+}
+
+#stepsList li {
+    margin-bottom: 5px;
+}}
