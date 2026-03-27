@@ -351,10 +351,11 @@ h1 {
 
 /* ---- Standard Buttons ---- */
 button {
-    height: 60px;
+    height: 100%;
+    min-height: 50px;
+    font-size: clamp(14px, 2.5vw, 18px);
     border-radius: 14px;
     border: none;
-    font-size: 17px;
     font-weight: 500;
     background: #2f3b52;
     color: white;
