@@ -501,6 +501,13 @@ button:active {
     animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
     position: relative;
     overflow: hidden;
+    background: rgba(30,41,59,0.7);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 380px;
+    margin: auto;
 }
 
 .history::before {
@@ -615,13 +622,6 @@ button:active {
     margin: auto;
 }
 
-    .history {
-    background: rgba(30,41,59,0.7);
-    backdrop-filter: blur(12px);
-    padding: 20px;
-    border-radius: 20px;
-    width: 260px;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.3);
 }
 body {
     margin: 0;
