@@ -671,11 +671,10 @@ button:hover {
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+    gap: 10px;
 }
 
 .calculator {
     width: 100%;
     max-width: 380px;
     margin: auto;
-}
