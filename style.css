@@ -673,3 +673,9 @@ button:hover {
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
 }
+
+.calculator {
+    width: 100%;
+    max-width: 380px;
+    margin: auto;
+}
