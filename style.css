@@ -614,90 +614,54 @@ button:active {
 
 /* ---- Mobile ---- */
 @media (max-width: 680px) {
+    body {
+        padding: 15px;
+    }
+    header {
+        margin-bottom: 20px;
+    }
+    .logo-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .version-tag {
+        align-self: center;
+    }
     .container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    max-width: 900px;
-    margin: auto;
-}
-@media (min-width: 901px) {
-
-.container {
-    grid-template-columns: 400px 300px;
-}
-
-}
-@media (max-width: 600px) {
-
-.container {
-    grid-template-columns: 1fr;
-}
-
-.buttons {
-    grid-template-columns: repeat(4, 1fr);
-}
-
-}
-
-}
-body {
-    margin: 0;
-    padding: 30px;
-    font-family: "Segoe UI", system-ui, sans-serif;
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    min-height: 100vh;
-}
-button:hover {
-    background: #475569;
-    transform: translateY(-2px);
-    box-shadow: 0 0 12px rgba(59,130,246,0.6);
-}
-.calculator {
-    background: #1e293b;
-    padding: 25px;
-    border-radius: 22px;
-    width: 320px;
-    box-shadow: 
-        0 20px 40px rgba(0,0,0,0.45),
-        inset 0 1px 0 rgba(255,255,255,0.05);
-}
-
-@keyframes floatIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 100%;
+        margin: 0;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .calculator {
+        width: 100%;
+        max-width: none;
+        padding: 20px;
+    }
+    .history {
+        width: 100%;
+        max-width: none;
+    }
+    .buttons {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+    .tools {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    .top-bar {
+        gap: 6px;
+    }
+    .ctrl-btn {
+        padding: 6px 12px;
+        font-size: 10px;
     }
 }
-
-.operator {
-    background: #2563eb;
-}
-
-.operator:hover {
-    background: #1d4ed8;
-}
-
-.equals {
-    background: #16a34a;
-}
-
-.equals:hover {
-    background: #15803d;
-}
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
-
-.calculator {
-    width: 100%;
-    max-width: 380px;
     margin: auto;
 
     .steps-panel {
