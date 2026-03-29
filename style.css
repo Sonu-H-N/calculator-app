@@ -337,13 +337,21 @@ h1 {
 
 .sci-btn:active { transform: scale(0.97); }
 
+/* ---- Standard Buttons ---- */
+.buttons.standard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
 /* Base button style (reset) */
 .num-btn, .op-btn, .action-btn, .eq-btn {
-    height: 56px;
+    height: 64px;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     font-family: var(--display);
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.15s ease;
@@ -614,8 +622,8 @@ h1 {
         gap: 10px;
     }
     .num-btn, .op-btn, .action-btn, .eq-btn, .sci-btn, .mem-btn {
-        height: 50px;
-        font-size: 16px;
+        height: 60px;
+        font-size: 17px;
     }
     h1 {
         font-size: 1.5rem;
