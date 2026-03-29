@@ -269,20 +269,6 @@ h1 {
     border-top: 1px solid var(--border);
 }
 
-.display {
-    width: 100%;
-    height: 70px;
-    font-size: 28px;
-    padding: 15px;
-    border-radius: 16px;
-    border: none;
-    margin-bottom: 18px;
-    text-align: right;
-    background: #e5e7eb;
-    color: #111827;
-    font-weight: 600;
-}
-
 #memIndicator {
     color: var(--accent2);
 }
@@ -350,30 +336,6 @@ h1 {
 }
 
 .sci-btn:active { transform: scale(0.97); }
-
-/* ---- Standard Buttons ---- */
-button {
-    height: 100%;
-    min-height: 50px;
-    font-size: clamp(14px, 2.5vw, 18px);
-    border-radius: 14px;
-    border: none;
-    font-weight: 500;
-    background: #2f3b52;
-    color: white;
-    cursor: pointer;
-    transition: all 0.15s ease;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.05),
-                0 4px 8px rgba(0,0,0,0.3);
-}
-
-button:hover {
-    background: #3b4a66;
-}
-
-button:active {
-    transform: scale(0.95);
-}
 
 /* Base button style (reset) */
 .num-btn, .op-btn, .action-btn, .eq-btn {
@@ -645,11 +607,15 @@ button:active {
     }
     .buttons {
         grid-template-columns: repeat(4, 1fr);
-        gap: 8px;
+        gap: 10px;
     }
     .tools {
         grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
+        gap: 10px;
+    }
+    .num-btn, .op-btn, .action-btn, .eq-btn, .sci-btn, .mem-btn {
+        height: 50px;
+        font-size: 16px;
     }
     h1 {
         font-size: 1.5rem;
@@ -662,21 +628,3 @@ button:active {
         font-size: 10px;
     }
 }
-    margin: auto;
-
-    .steps-panel {
-    background: rgba(30,41,59,0.8);
-    padding: 15px;
-    border-radius: 15px;
-    margin-top: 15px;
-}
-
-#stepsList {
-    list-style: none;
-    padding: 0;
-    font-size: 14px;
-}
-
-#stepsList li {
-    margin-bottom: 5px;
-}}
