@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CALC — Advanced Scientific Calculator</title>
+    <link rel="manifest" href="manifest.json">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -69,6 +70,9 @@
                 <button class="sci-btn" onclick="applyTrig('sin')">sin</button>
                 <button class="sci-btn" onclick="applyTrig('cos')">cos</button>
                 <button class="sci-btn" onclick="applyTrig('tan')">tan</button>
+                <button class="sci-btn" onclick="applyTrig('asin')">asin</button>
+                <button class="sci-btn" onclick="applyTrig('acos')">acos</button>
+                <button class="sci-btn" onclick="applyTrig('atan')">atan</button>
                 <button class="sci-btn" onclick="appendValue('Math.PI')">π</button>
                 <button class="sci-btn" onclick="appendFunction('Math.log10(')">log</button>
                 <button class="sci-btn" onclick="appendFunction('Math.log(')">ln</button>
@@ -149,6 +153,7 @@
 <div class="toast" id="toast"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

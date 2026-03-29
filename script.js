@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const safeEval = (expression) => {
         try {
-            return Function(`"use strict"; return (${expression})`)();
+            return math.evaluate(expression);
         } catch {
             return null;
         }
@@ -149,11 +149,19 @@ document.addEventListener("DOMContentLoaded", () => {
         let value = parseFloat(display.value);
         if (isNaN(value)) { showToast("Enter a number first"); return; }
 
-        if (isDegree) value = value * Math.PI / 180;
+        let result;
+        if (['asin', 'acos', 'atan'].includes(func)) {
+            // Inverse trig: input is value, output in radians, convert to degrees if needed
+            result = Math[func](value);
+            if (isDegree) result = result * 180 / Math.PI;
+        } else {
+            // Direct trig: convert input to radians if needed
+            if (isDegree) value = value * Math.PI / 180;
+            result = Math[func](value);
+        }
 
-        const result = Math[func](value);
         const formatted = parseFloat(result.toFixed(10));
-        addToHistory(`${func}(${display.value}°)`, formatted);
+        addToHistory(`${func}(${display.value})`, formatted);
         display.value = String(formatted);
         updatePreview();
     };
@@ -392,47 +400,3 @@ document.addEventListener("DOMContentLoaded", () => {
     /* Init */
     loadHistory();
 });
-function showSteps(expression) {
-
-    let stepsList = document.getElementById("stepsList");
-    stepsList.innerHTML = "";
-
-    try {
-        let exp = expression;
-
-        // Step 1: Multiplication & Division
-        let step1 = exp.replace(/(\d+)([*\/])(\d+)/, (match, a, op, b) => {
-            let result = eval(match);
-            addStep(`Step 1: ${match} = ${result}`);
-            return result;
-        });
-
-        // Step 2: Addition/Subtraction
-        let result = eval(step1);
-        addStep(`Step 2: ${step1} = ${result}`);
-
-    } catch {
-        addStep("Unable to show steps");
-    }
-}
-
-function addStep(text) {
-    let li = document.createElement("li");
-    li.textContent = text;
-    document.getElementById("stepsList").appendChild(li);
-}
-function calculate() {
-
-    try {
-        let expression = display.value;
-        let result = eval(expression);
-
-        showSteps(expression);
-
-        addToHistory(expression + " = " + result);
-        display.value = result;
-
-    } catch {
-        display.value = "Error";
-    }
-}

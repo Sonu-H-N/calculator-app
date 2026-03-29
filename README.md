@@ -9,7 +9,7 @@ https://sonu-h-n.github.io/calculator-app/
 ## ✨ Features
 
 - 🔢 Basic arithmetic operations
-- 📐 Scientific functions (sin, cos, tan, log, ln, √, π, x²)
+- 📐 Scientific functions (sin, cos, tan, asin, acos, atan, log, ln, √, π, x²)
 - 🎤 Voice input calculator
 - 📊 Graph plotting using Chart.js
 - 💱 Currency converter (USD → INR)
@@ -22,6 +22,7 @@ https://sonu-h-n.github.io/calculator-app/
 - 🧮 Memory functions (M+, M-, MR, MC)
 - 📱 Mobile responsive layout
 - 📦 Installable as PWA (Progressive Web App)
+- 🔒 Safe expression evaluation with Math.js
 
 ## 🛠️ Technologies Used
 
@@ -29,6 +30,7 @@ https://sonu-h-n.github.io/calculator-app/
 - CSS3
 - JavaScript
 - Chart.js
+- Math.js
 - Web Speech API
 - LocalStorage
 - Service Worker (PWA)
