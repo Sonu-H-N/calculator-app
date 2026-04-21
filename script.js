@@ -400,3 +400,25 @@ document.addEventListener("DOMContentLoaded", () => {
     /* Init */
     loadHistory();
 });
+function playErrorSound() {
+    errorSound.currentTime = 0;
+    errorSound.play();
+}
+function playErrorSound() {
+    errorSound.currentTime = 0;
+    errorSound.play();
+}
+// Graph error
+if (!display.value.includes("x")) {
+    playErrorSound();
+    return;
+}
+// Currency error
+if (isNaN(amount)) {
+    playErrorSound();
+    return;
+}// Currency error
+if (isNaN(amount)) {
+    playErrorSound();
+    return;
+}
