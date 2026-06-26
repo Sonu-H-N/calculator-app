@@ -417,7 +417,8 @@ if (!display.value.includes("x")) {
 if (isNaN(amount)) {
     playErrorSound();
     return;
-}// Currency error
+}
+// Currency error
 if (isNaN(amount)) {
     playErrorSound();
     return;
