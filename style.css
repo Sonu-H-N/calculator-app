@@ -463,18 +463,15 @@ h1 {
 
 /* ---- History Panel ---- */
 .history {
-    background: var(--surface);
+    background: rgba(30,41,59,0.7);
+    backdrop-filter: blur(12px);
     border: 1px solid var(--border);
     padding: 20px;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow);
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.3);
     animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
     position: relative;
     overflow: hidden;
-    background: rgba(30,41,59,0.7);
-    backdrop-filter: blur(12px);
-    border-radius: 20px;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.3);
     width: 100%;
     max-width: 380px;
     margin: auto;
@@ -634,5 +631,69 @@ h1 {
     .ctrl-btn {
         padding: 6px 12px;
         font-size: 10px;
+    }
+}
+/* ---- Steps Panel ---- */
+.steps-panel {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    min-height: 60px;
+}
+
+.steps-panel h3 {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+    font-family: var(--mono);
+    font-weight: 400;
+}
+
+.steps-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.steps-panel li {
+    font-size: 11px;
+    font-family: var(--mono);
+    color: var(--text-muted);
+    padding: 3px 0;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.5;
+}
+
+.steps-panel li:last-child {
+    border-bottom: none;
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.steps-panel:empty::after,
+.steps-panel ul:empty::after {
+    content: "Calculate or use AI Solve to see steps";
+    font-size: 10px;
+    color: var(--text-dim);
+    display: block;
+    padding: 4px 0;
+    letter-spacing: 0.05em;
+}
+
+/* ---- Accessibility ---- */
+button:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
     }
 }
